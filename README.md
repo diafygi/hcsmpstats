@@ -1,0 +1,4 @@
+hcsmpstats
+==========
+
+HardcoreSMP stats
