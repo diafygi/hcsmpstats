@@ -1,0 +1,28 @@
+<html>
+<head><title>HCSMP Stats</title></head>
+<body>
+<h1>Ways to Die</h1>
+<h3>Overall</h3>
+<img src="https://chart.googleapis.com/chart?cht=p&chds=a&chs=700x300&chd=t:{{ ways_to_die_html.overall.numbers }}&chl={{ ways_to_die_html.overall.labels }}" />
+<h3>Noobs (0-2 hours)</h3>
+<img src="https://chart.googleapis.com/chart?cht=p&chds=a&chs=700x300&chd=t:{{ ways_to_die_html.noob.numbers }}&chl={{ ways_to_die_html.noob.labels }}" />
+<h3>Moderates (2-30 hours)</h3>
+<img src="https://chart.googleapis.com/chart?cht=p&chds=a&chs=700x300&chd=t:{{ ways_to_die_html.moderates.numbers }}&chl={{ ways_to_die_html.moderates.labels }}" />
+<h3>Experienced (30+ hours)</h3>
+<img src="https://chart.googleapis.com/chart?cht=p&chds=a&chs=700x300&chd=t:{{ ways_to_die_html.experienced.numbers }}&chl={{ ways_to_die_html.experienced.labels }}" />
+<h1>Top Killers</h1>
+<table>
+  <tr><td>Player</td><td>Kills</td></tr>
+  {% for k in killers %}
+    <tr><td>{{ k.user }}</td><td>{{ k.killed }}</td></tr>
+  {% endfor %}
+</table>
+<h1>Top Witnesses</h1>
+<table>
+  <tr><td>Player</td><td>Deaths Witnessed</td></tr>
+  {% for w in witnesses %}
+    <tr><td>{{ w.user }}</td><td>{{ w.witnessed }}</td></tr>
+  {% endfor %}
+</table>
+</body>
+</html>
